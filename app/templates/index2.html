@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Lista de personajes</h1>
+    {% for personaje in lista %}
+    <img src="{{personaje.image}}">
+    <ul>
+        name: {{personaje.name}}<br>
+        status: {{personaje.status}}<br>
+        species: {{personaje.species}}<br>
+        type: {{personaje.type}}<br>
+        gender: {{personaje.gender}}<br>
+        origin: {{personaje.origin}}<br>
+        location: {{personaje.location}}<br>
+        <br>
+        <br>
+        
+    </ul>
+        
+    {% endfor %}
+{% endblock content %}
