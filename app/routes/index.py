@@ -8,7 +8,7 @@ perfil_ruta=Blueprint('perfil_ruta',__name__)
 def index():
      
     lista_personajes=insertar_personaje()
-    return render_template('index2.html',lista=lista_personajes)
+    return render_template('index.html',lista=lista_personajes)
 
 @perfil_ruta.route('/perfil/<int:id>')
 def perfil(id):
