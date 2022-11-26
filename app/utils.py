@@ -4,7 +4,8 @@ from app.db import db
 import hashlib
 
 def insertar_personaje():
-    if not db.personajes.find():    
+    
+    if db.personajes.estimated_document_count()==0:    
         for i in range(1,22): 
                 url='https://rickandmortyapi.com/api/character?page='+str(i)
                     
