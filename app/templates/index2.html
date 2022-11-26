@@ -3,7 +3,7 @@
 {% block content %}
 <h1>Lista de personajes</h1>
     {% for personaje in lista %}
-    <a href="{{url_for('perfil_ruta.perfil')}}">
+    <a href="{{url_for('perfil_ruta.perfil', id=personaje.id)}}">
         <img src="{{personaje.image}}">
     </a>
     <ul>
