@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template,flash
 from ..utils import insertar_personaje
-from ..utils import gravatar
+
 from app.db import db
 
 perfil_ruta=Blueprint('perfil_ruta',__name__)
