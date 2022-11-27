@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template,flash
+from flask import Blueprint, render_template
 from ..utils import insertar_personaje
 
 from app.db import db
