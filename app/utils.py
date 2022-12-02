@@ -72,19 +72,6 @@ def personajes_de_episodio(id_ep):
         r_personaje = requests.get(url)
         if r_personaje.ok:
             personaje = r_personaje.json()
-            firstSeen = first_seen(personaje["episode"])
-            personaje_obj = Personaje(
-                personaje["id"],
-                personaje["name"],
-                personaje["status"],
-                personaje["species"],
-                personaje["type"],
-                personaje["gender"],
-                personaje["origin"]["name"],
-                personaje["location"]["name"],
-                personaje["image"],
-                firstSeen
-            )
-            lista_personajes.append(personaje_obj.to_json())
-
+            lista_personajes.append(db.personajes.find_one({'id':personaje["id"]}))
+                        
     return lista_personajes
