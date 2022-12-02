@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template
-from ..utils import insertar_personaje
+from ..utils import insertar_personaje, insertar_episodio, personajes_de_episodio
 
 from app.db import db
 
@@ -16,3 +16,9 @@ def perfil(id):
     personaje=db.personajes.find_one({'id':id})
     
     return render_template('perfil.html',personaje=personaje)
+
+@perfil_ruta.route('/capitulo/<int:id>')
+def episodio(id):
+   insertar_episodio()
+   lista_personajes=personajes_de_episodio(id)
+   return render_template('episodio.html',lista_personajes=lista_personajes)
