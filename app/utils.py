@@ -5,10 +5,10 @@ from app.db import db
 
 
 def insertar_personaje(page):
-    page=22-page
-    ultimo=(page*20)+1
-    ultimoPersonaje=db.personajes.find_one({"id":page*20})
-    if ultimoPersonaje is None: 
+    page = 22 - page
+    ultimo = (page * 20) + 1
+    ultimoPersonaje = db.personajes.find_one({"id": page * 20})
+    if ultimoPersonaje is None:
         url = "https://rickandmortyapi.com/api/character?page=" + str(page)
         r_perfil = requests.get(url)
         if r_perfil.ok:
@@ -28,11 +28,9 @@ def insertar_personaje(page):
                     firstSeen,
                 )
                 db.personajes.insert_one(personaje_obj.to_json())
-                ultimo = personaje["id"]+1
+                ultimo = personaje["id"] + 1
     lista_personajes = (
-        db.personajes.find({"id": {"$lt": ultimo}})
-        .sort("id", -1)
-        .limit(20)
+        db.personajes.find({"id": {"$lt": ultimo}}).sort("id", -1).limit(20)
     )
     return lista_personajes
 
@@ -64,14 +62,40 @@ def insertar_episodio():
             )
             db.episodios.insert_one(episodio_obj.to_json())
 
+
 def personajes_de_episodio(id_ep):
-    lista_personajes=[]
-    episodio=db.episodios.find_one({'id':id_ep})
+    lista_personajes = []
+    episodio = db.episodios.find_one({"id": id_ep})
     for url in episodio["characters"]:
 
         r_personaje = requests.get(url)
         if r_personaje.ok:
             personaje = r_personaje.json()
-            lista_personajes.append(db.personajes.find_one({'id':personaje["id"]}))
-                        
+            if db.personajes.find_one({"id": personaje["id"]}) is None:
+                url_x = "https://rickandmortyapi.com/api/character/" + str(
+                    personaje["id"]
+                )
+                r_perfil = requests.get(url_x)
+                if r_perfil.ok:
+                    respuestaPerfil = r_perfil.json()
+
+                    firstSeen = first_seen(respuestaPerfil["episode"])
+                    personaje_obj = Personaje(
+                        respuestaPerfil["id"],
+                        respuestaPerfil["name"],
+                        respuestaPerfil["status"],
+                        respuestaPerfil["species"],
+                        respuestaPerfil["type"],
+                        respuestaPerfil["gender"],
+                        respuestaPerfil["origin"]["name"],
+                        respuestaPerfil["location"]["name"],
+                        respuestaPerfil["image"],
+                        firstSeen,
+                    )
+                    db.personajes.insert_one(personaje_obj.to_json())
+                    lista_personajes.append(
+                        db.personajes.find_one({"id": respuestaPerfil["id"]})
+                    )
+            lista_personajes.append(db.personajes.find_one({"id": personaje["id"]}))
+
     return lista_personajes

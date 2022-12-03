@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block container %}
-<h1 class="display-5">Lista de personajes en el capítulo {{id_ep}}</h1>
+<h2 class="display-5">Lista de personajes en el capítulo {{id_ep}}</h2>
 <br />
 <div class="row row-cols-1 row-cols-md-2 g-4">
     {% for personaje in lista_personajes %}
@@ -14,7 +14,7 @@
             <div class="col-md-8">
               <div class="card-body">
                 <h5 class="card-title mb-0">
-                  <a class="text-decoration-none text-black" href="{{ url_for('perfil_ruta.perfil',id=personaje.id ) }}">{{ personaje["name"] }}</a>
+                  <a class="text-decoration-none text-black" href="{{ url_for('perfil_ruta.perfil2',id=personaje.id, id_ep=id_ep ) }}">{{ personaje["name"] }}</a>
                 </h5>
                 <h6 class="card-subtitle mb-1 text-muted">
                   {% if personaje.status=="Alive" %}
