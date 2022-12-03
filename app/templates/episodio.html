@@ -1,21 +1,55 @@
 {% extends "base.html" %}
 
 {% block container %}
-<h1>Lista de personajes en el episodio</h1>
-
-{% for personaje in lista_personajes %}
-<img src="{{personaje.image}}">
-<ul>
-    name: {{personaje.name}}<br>
-    status: {{personaje.status}}<br>
-    species: {{personaje.species}}<br>
-    type: {{personaje.type}}<br>
-    gender: {{personaje.gender}}<br>
-    origin: {{personaje.origin}}<br>
-    location: {{personaje.location}}<br>
-    <br>
-    <br>
-
-</ul>
-{% endfor %}
+<h1 class="display-5">Lista de personajes en el capítulo {{id_ep}}</h1>
+<br />
+<div class="row row-cols-1 row-cols-md-2 g-4">
+    {% for personaje in lista_personajes %}
+      <div class="col">
+        <div class="card mb-3" style="max-width: 540px">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="{{ personaje.image }}" class="img-fluid rounded-start" alt="..." style="height: 100%;"/>
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title mb-0">
+                  <a class="text-decoration-none text-black" href="{{ url_for('perfil_ruta.perfil',id=personaje.id ) }}">{{ personaje["name"] }}</a>
+                </h5>
+                <h6 class="card-subtitle mb-1 text-muted">
+                  {% if personaje.status=="Alive" %}
+                    {% set clase = "text-success" %}
+                  {% elif personaje.status=="Dead" %}
+                    {% set clase = "text-danger" %}
+                  {% else %}
+                    {% set clase = "text-warning" %}
+                  {% endif %}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" fill="currentColor"
+                   class="bi bi-circle-fill {{ clase }}"
+                    viewBox="0 0 16 16">
+                    <circle cx="8" cy="8" r="8" />
+                  </svg>
+                  {{ personaje.status }} - {{ personaje.species }}
+                </h6>
+  
+                <p class="card-text mb-0">
+                  <span
+                    ><small class="text-muted">Last know location: </small
+                    ><br /><span class="mt-0 pt-0">{{ personaje.location }}</span></span
+                  >
+                </p>
+  
+                <p class="card-text mb-0">
+                  <span
+                    ><small class="text-muted">First seen in: </small
+                    ><br /><span class="mt-0 pt-0">{{ personaje.firstSeen }}</span></span
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
 {% endblock %}

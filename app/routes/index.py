@@ -21,4 +21,4 @@ def perfil(id):
 def episodio(id):
    insertar_episodio()
    lista_personajes=personajes_de_episodio(id)
-   return render_template('episodio.html',lista_personajes=lista_personajes)
+   return render_template('episodio.html',lista_personajes=lista_personajes,id_ep=id)
