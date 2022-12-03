@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block container %}
+<!-- <button type="button" class="btn btn-primary btn-lg" onclick="myFunction()">Ver por episodio</button> -->
 {% include 'pagination.html'   %}
 <div class="row row-cols-1 row-cols-md-2 g-4">
   {% for personaje in lista %}
@@ -50,4 +51,15 @@
     </div>
   {% endfor %}
 </div>
+<script>
+  function myFunction() {
+    let text;
+    let episodio = prompt("Personajes de que episodio quieres ver?", "1");
+    if (!isNaN(episodio)){
+      
+      console.log(episodio)
+    }
+  }
+  </script>
+
 {% endblock %}
