@@ -9,7 +9,7 @@ perfil_ruta=Blueprint('perfil_ruta',__name__)
 def index(page=1):
     paginas={"inicio":1,"fin":22}
     lista_personajes=insertar_personaje(page)
-    return render_template('index.html',lista=lista_personajes,paginas=paginas)
+    return render_template('index.html',lista=lista_personajes,paginas=paginas,page=page)
 
 @perfil_ruta.route('/perfil/<int:id>')
 def perfil(id):

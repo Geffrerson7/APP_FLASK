@@ -2,7 +2,11 @@
 <nav aria-label="Page navigation example">
     <ul class="pagination justify-content-center">
         {% for element in range(paginas.inicio, paginas.fin) %}
-            <li class="page-item"><a class="page-link" href="{{ url_for('perfil_ruta.index',page=element ) }}">{{ element|e }}</a></li>
+            {% if element==page %}
+              {% set clase = "active" %}
+            {% endif %}
+              
+            <li class="page-item"><a class="page-link {{ clase }}" href="{{ url_for('perfil_ruta.index',page=element ) }}">{{ element|e }}</a></li>
         {% endfor %}
       <!-- <li class="page-item active"><a class="page-link" href="#">2</a></li> -->
     </ul>

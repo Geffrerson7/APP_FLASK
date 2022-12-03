@@ -5,10 +5,10 @@ from app.db import db
 
 
 def insertar_personaje(page):
-    limit = 20
-    total = db.personajes.estimated_document_count()
-    pageN = (page - 1) * 20
-    if total < (page * limit):
+    page=22-page
+    ultimo=(page*20)+1
+    ultimoPersonaje=db.personajes.find_one({"id":page*20})
+    if ultimoPersonaje is None: 
         url = "https://rickandmortyapi.com/api/character?page=" + str(page)
         r_perfil = requests.get(url)
         if r_perfil.ok:
@@ -28,9 +28,9 @@ def insertar_personaje(page):
                     firstSeen,
                 )
                 db.personajes.insert_one(personaje_obj.to_json())
-                pageN = 0
+                ultimo = personaje["id"]+1
     lista_personajes = (
-        db.personajes.find({"id": {"$lt": (total + 1) - pageN}})
+        db.personajes.find({"id": {"$lt": ultimo}})
         .sort("id", -1)
         .limit(20)
     )
