@@ -4,6 +4,7 @@ from ..utils import insertar_personaje, insertar_episodio, personajes_de_episodi
 from app.db import db
 
 perfil_ruta=Blueprint('perfil_ruta',__name__)
+
 @perfil_ruta.route('/<int:page>')
 @perfil_ruta.route('/')
 def index(page=1):
@@ -25,6 +26,6 @@ def perfil2(id):
 
 @perfil_ruta.route('/capitulo/<int:id>')
 def episodio(id=1):
-   insertar_episodio()
+   insertar_episodio(id)
    lista_personajes=personajes_de_episodio(id)
    return render_template('episodio.html',lista_personajes=lista_personajes,id_ep=id)
