@@ -13,14 +13,6 @@ También extrae los datos de los capítulos, los almacena en la colección "epis
 
 En ambos casos, se puede acceder a mas datos de la personaje haciendo click
 en su nombre.
-## Screenshots
-
-![App Screenshot](https://drive.google.com/file/d/1CXZpqSZNdEP80mlknoS5byFLeVS11Huy/view?usp=share_link)
-
-![App Screenshot](https://drive.google.com/file/d/1G27WnLDlo4semnR-SaWDcKAijAUWB0Lf/view?usp=sharing)
-
-![App Screenshot](https://drive.google.com/file/d/13CccgGDKnsJTDHKovUP9zF-GwJM_B26v/view?usp=share_link)
-
 
 ## Variables de entorno
 
