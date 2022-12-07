@@ -13,6 +13,24 @@ También extrae los datos de los capítulos, los almacena en la colección "epis
 
 En ambos casos, se puede acceder a mas datos de la personaje haciendo click
 en su nombre.
+## URLs Disponibles en la aplicación
+Carga cada página del listado general de personajes:
+```
+http://127.0.0.1:5000/
+http://127.0.0.1:5000/<int:id>
+```
+Muestra Perfil de un personaje en especifico
+```
+http://127.0.0.1:5000/perfil/<int:id>
+```
+Muestra los personajes de un capitulo en especifico
+```
+http://127.0.0.1:5000/capitulo/<int:id>
+```
+Muestra el perfil de un personaje en especifico desde un episodio en especifico
+```
+http://127.0.0.1:5000/perfil_ep/<int:id>?id_ep=<id>
+```
 
 ## Variables de entorno
 
