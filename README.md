@@ -29,7 +29,7 @@ http://127.0.0.1:5000/capitulo/<int:id>
 ```
 Muestra el perfil de un personaje en especifico desde un episodio en especifico
 ```
-http://127.0.0.1:5000/perfil_ep/<int:id>?id_ep=<id>
+http://127.0.0.1:5000/perfil_ep/<int:id>
 ```
 
 ## Variables de entorno
