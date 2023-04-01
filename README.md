@@ -13,7 +13,7 @@ También extrae los datos de los capítulos, los almacena en la colección "epis
 
 En ambos casos, se puede acceder a mas datos de la personaje haciendo click
 en su nombre.
-## URLs Disponibles en la aplicación
+## Rutas de la aplicación
 Carga cada página del listado general de personajes:
 ```
 http://127.0.0.1:5000/
@@ -32,10 +32,28 @@ Muestra el perfil de un personaje en especifico desde un episodio en especifico
 http://127.0.0.1:5000/perfil_ep/<int:id>
 ```
 
-## Variables de entorno
+## Instalación local
 
-Para ejecutar este proyecto, necesitas agregar las siguientes
-variables de entorno a tu archivo .env
+Clonar el repositorio
+```bash
+  $ clone git https://github.com/Geffrerson7/FLASK-APP-RICK-AND-MORTY.git
+```
+Ir al directorio del proyecto
+```bash
+  $ cd FLASK-APP-RICK-AND-MORTY
+```
+Crear un entorno virtual
+
+```sh
+$ virtualenv venv
+Axctivar el entorno virtual
+# windows
+$ source venv/Scripts/activate
+# Linux
+$ source venv/bin/activate
+```
+
+Crear las variables de entorno en el archivo .env
 
 `APP_FLASK`
 
@@ -46,15 +64,23 @@ variables de entorno a tu archivo .env
 `SECRET_KEY`
 
 
-## Requirements
-
-Si han clonado un proyecto de github y quieren instalar las dependencias, pueden usar el archivo requirements.txt
-
+Instalar las dependencias
 ```
 pip install -r requirements.txt
 ```
+
+Una vez concluido todo eso, procedemos a iniciar la app
+```sh
+(env)$ flask run
+```
+
+Y navegar a la ruta
+```sh
+http://127.0.0.1:5000/
+```
+
     
 ## Autores
 
-- Raisa Vanessa Orellana Rios ([Raisa320](https://www.github.com/Raisa320))
-- Gefferson Max Casasola Huamancusi ([Geffrerson7](https://www.github.com/Geffrerson7))
+- [Raisa Vanessa Orellana Rios](https://www.github.com/Raisa320)
+- [Gefferson Max Casasola Huamancusi ](https://www.github.com/Geffrerson7)
