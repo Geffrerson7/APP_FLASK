@@ -13,13 +13,13 @@ def insertar_personaje(page):
     page = 43 - page  # 42 -> 1
     url = "https://rickandmortyapi.com/api/character?page=" + str(page)
     r_perfil = requests.get(url)
+    
     if r_perfil.ok:
-        if r_perfil.ok:
-            respuestaPerfil = r_perfil.json()
-            for personaje in respuestaPerfil["results"]:
-                if db.personajes.find_one({"id": personaje["id"]}) is None:
-                    firstSeen = first_seen(personaje["episode"])
-                    personaje_obj = Personaje(
+        respuestaPerfil = r_perfil.json()
+        for personaje in respuestaPerfil["results"]:
+            if db.personajes.find_one({"id": personaje["id"]}) is None:
+                firstSeen = first_seen(personaje["episode"])
+                personaje_obj = Personaje(
                         personaje["id"],
                         personaje["name"],
                         personaje["status"],
@@ -31,12 +31,12 @@ def insertar_personaje(page):
                         personaje["image"],
                         firstSeen,
                     )
-                    db.personajes.insert_one(personaje_obj.to_json())
-                ultimo = personaje["id"] + 1
+                db.personajes.insert_one(personaje_obj.to_json())
+            ultimo = personaje["id"] + 1
     lista_personajes = (
         db.personajes.find({"id": {"$lt": ultimo}}).sort("id", -1).limit(20)
     )
-    return lista_personajes
+    return list(lista_personajes)
 
 
 def first_seen(arrayEpisodio: list):
