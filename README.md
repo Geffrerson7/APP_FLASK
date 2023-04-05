@@ -13,6 +13,16 @@ También extrae los datos de los capítulos, los almacena en la colección "epis
 
 En ambos casos, se puede acceder a mas datos de la personaje haciendo click
 en su nombre.
+
+## Screenshots
+
+![rick-and-morty-2](https://user-images.githubusercontent.com/61089189/230173717-5be97d79-48b5-419c-8f8c-7ace22be5a2a.png)
+
+![rick-and-morty-3](https://user-images.githubusercontent.com/61089189/230173723-4b2f88f8-d235-4798-bf85-a106ffdee432.png)
+
+![rick-and-morty-4](https://user-images.githubusercontent.com/61089189/230173725-62211d17-2d78-4657-8b38-a4deddff05d2.png)
+
+
 ## Rutas de la aplicación
 Carga cada página del listado general de personajes:
 ```
