@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template
-from ..utils import insertar_personaje, insertar_episodio, personajes_de_episodio
+from ..service import insertar_personaje, insertar_episodio, personajes_de_episodio
 
 from app.db import db
 

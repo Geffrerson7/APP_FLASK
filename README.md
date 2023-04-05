@@ -66,7 +66,7 @@ Crear las variables de entorno en el archivo .env
 
 Instalar las dependencias
 ```
-pip install -r requirements.txt
+(env)$ pip install -r requirements.txt
 ```
 
 Una vez concluido todo eso, procedemos a iniciar la app
@@ -78,6 +78,15 @@ Y navegar a la ruta
 ```sh
 http://127.0.0.1:5000/
 ```
+## Tecnologías y lenguajes utilizados
+
+* **Python** (v. 3.10.7) [Source](https://www.python.org/)
+* **Flask** (v. 2.2.3)  [Source](https://flask.palletsprojects.com/en/2.2.x/)
+* **Pymongo** (v. 4.3.3) [Source](https://pymongo.readthedocs.io/en/stable/)
+* **Jinja 2** (v. 3.1.2) [Source](https://jinja.palletsprojects.com/en/3.1.x/)
+* **Bootstrap** (v. 5.2.3) [Source](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
+* **python-dotenv** (v. 1.0.0) [Source](https://pypi.org/project/python-dotenv/)
+* **Rick and Morty API** [Source](https://rickandmortyapi.com/documentation)
 
     
 ## Autores
