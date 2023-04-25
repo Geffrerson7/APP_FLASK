@@ -1,5 +1,5 @@
 
-# FLASK_APP_RICK_AND_MORTY
+# RICK AND MORTY APP
 
 
 ## Descripción
