@@ -1,27 +1,15 @@
-
 # RICK AND MORTY APP
 
-
 ## Descripción
-Es una aplicación que extrae los datos de los personajes 
-de la API "Rick and Morty", los almacena en la colección "personajes" 
-de la base de datos "rick_y_morty" y los muestra ordenados por el id de forma 
-descendente en la ruta raiz en grupos de 20 por cada página, en un total de 42 páginas. 
-
-También extrae los datos de los capítulos, los almacena en la colección "episodios" y muestra los datos de los personajes que aparecen en dicho capitulo en la ruta dinámica
-"capitulo/id". 
-
-En ambos casos, se puede acceder a mas datos de la personaje haciendo click
-en su nombre.
+Es una aplicación para listar los datos de todos los personajes y buscar los datos personajes de un episodio en específico de la serie Rick and Morty.
 
 ## Screenshots
 
-![rick-and-morty-2](https://user-images.githubusercontent.com/61089189/230173717-5be97d79-48b5-419c-8f8c-7ace22be5a2a.png)
+![screenrick-and-morty-app-1](https://github.com/Geffrerson7/FLASK-APP-RICK-AND-MORTY/assets/61089189/e63557bc-8237-489a-968d-517e6290ac31)
 
-![rick-and-morty-3](https://user-images.githubusercontent.com/61089189/230173723-4b2f88f8-d235-4798-bf85-a106ffdee432.png)
+![screenrick-annd-morty-app-2](https://github.com/Geffrerson7/FLASK-APP-RICK-AND-MORTY/assets/61089189/a28bb642-863e-4451-9476-ce9d0584bf71)
 
-![rick-and-morty-4](https://user-images.githubusercontent.com/61089189/230173725-62211d17-2d78-4657-8b38-a4deddff05d2.png)
-
+![screenrick-and-morty-app-3](https://github.com/Geffrerson7/FLASK-APP-RICK-AND-MORTY/assets/61089189/c1ccfbcb-3e77-4ca1-b618-0b26e1d782bb)
 
 ## Instalación local
 
