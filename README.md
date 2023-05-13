@@ -1,7 +1,7 @@
 # RICK AND MORTY APP
 
 ## Descripción
-Es una aplicación para listar los datos de todos los personajes y buscar los datos personajes de un episodio en específico de la serie Rick and Morty.
+Es una aplicación para listar los datos de todos los personajes y buscar los datos de los personajes de un episodio en específico de la serie Rick and Morty.
 
 ## Screenshots
 
