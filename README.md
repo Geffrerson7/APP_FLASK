@@ -66,24 +66,24 @@ http://127.0.0.1:5000/
 
 ## Instalación del proyecto en Docker
 
-Clone the repository
+Clonar el repositorio
 
 ```bash
 $ git clone https://github.com/Geffrerson7/FLASK-APP-RICK-AND-MORTY.git
 ```
 
-Go to the project directory.
+Ir al directorio del proyecto
 
 ```bash
 $ cd FLASK-APP-RICK-AND-MORTY
 ```
 
-Run the command
+Ejecutar el comando
 ```sh
 $ docker-compose up
 ```
 
-And navigate to the route
+Y navegar a la ruta
 ```sh
 http://127.0.0.1:8000/
 ```
