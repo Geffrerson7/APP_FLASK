@@ -42,6 +42,12 @@ Crear las variables de entorno en el archivo .env
 
 `SECRET_KEY`
 
+`FLASK_RUN_HOST`
+
+`DATABASE_URI`
+
+`DB_NAME`
+
 
 Instalar las dependencias
 ```
@@ -57,6 +63,31 @@ Y navegar a la ruta
 ```sh
 http://127.0.0.1:5000/
 ```
+
+## Instalación del proyecto en Docker
+
+Clone the repository
+
+```bash
+$ git clone https://github.com/Geffrerson7/FLASK-APP-RICK-AND-MORTY.git
+```
+
+Go to the project directory.
+
+```bash
+$ cd FLASK-APP-RICK-AND-MORTY
+```
+
+Run the command
+```sh
+$ docker-compose up
+```
+
+And navigate to the route
+```sh
+http://127.0.0.1:8000/
+```
+
 ## Tecnologías y lenguajes utilizados
 
 * **Python** (v. 3.10.7) [Source](https://www.python.org/)
